@@ -1,6 +1,6 @@
 body {
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-right: 10px;
+  padding-left: 10px;
   text-align: center;
 }
 
@@ -56,17 +56,30 @@ input:focus {
 .gallery {
   display: flex;
   flex-wrap: wrap;
+  padding: 0;
 }
 
 .gallery li {
-  min-width: 300px;
-  width: calc(100% / 6 - 60px);
+  /* min-width: 210px; */
+  width: calc(100% / 6 - 35px);
   padding: 5px;
   margin: 10px;
 
   border: 2px solid rgb(116, 116, 255);
   border-radius: 5px;
   transition: all 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@media screen and (max-width: 1200px) {
+  .gallery li {
+    width: calc(100% / 4 - 35px);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .gallery li {
+    width: 100%;
+  }
 }
 
 .gallery li:hover {
@@ -79,6 +92,7 @@ input:focus {
 
 .gallery li .stats {
   display: flex;
+  /* flex-wrap: wrap; */
   justify-content: center;
   align-items: center;
 
@@ -87,10 +101,12 @@ input:focus {
 
 .gallery .stats .stats-item {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
+  justify-content: center;
 }
 
-.gallery .stats .material-icons {
+.gallery .li .material-icons {
   margin-right: 5px;
 }
 
